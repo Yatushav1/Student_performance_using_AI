@@ -2,32 +2,46 @@
 <html>
 
 <head>
+
 <title>Student Performance Predictor</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
 </head>
 
 <body>
 
-<h2>Student Performance Prediction</h2>
+<div class="container-box">
+
+<h2>AI Performance Predictor</h2>
 
 <form action="/predict" method="post">
 
-<label>Weekly Study Hours</label><br>
-<input type="text" name="study_hours"><br><br>
+<input name="study_hours" placeholder="Study Hours">
 
-<label>Attendance Percentage</label><br>
-<input type="text" name="attendance"><br><br>
+<input name="attendance" placeholder="Attendance %">
 
-<label>Class Participation</label><br>
-<input type="text" name="participation"><br><br>
+<input name="participation" placeholder="Class Participation">
 
-<label>Total Score</label><br>
-<input type="text" name="score"><br><br>
+<input name="score" placeholder="Total Score">
 
 <button type="submit">Predict Grade</button>
 
 </form>
 
-<h3>{{ result }}</h3>
+{% if result %}
+
+<h2>Predicted Grade: {{ result }}</h2>
+
+{% endif %}
+
+<br>
+
+<center>
+<a href="/logout">Logout</a>
+</center>
+
+</div>
 
 </body>
 
