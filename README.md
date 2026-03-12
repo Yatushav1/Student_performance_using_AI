@@ -1,8 +1,7 @@
 <<<<<<< HEAD
 # Predicting Student Performance Using AI
 
-This project predicts student academic performance using Machine Learning techniques.
-It is developed as a semester college project.
+This project develops a machine learning model that predicts student academic performance using factors like study hours, attendance, and previous scores, helping educators identify students who may need additional support.
 
 ## Project Objective
 To analyze student data and predict performance based on factors like:
