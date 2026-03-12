@@ -4,7 +4,7 @@
 This project develops a machine learning model that predicts student academic performance using factors like study hours, attendance, and previous scores, helping educators identify students who may need additional support.
 
 ## Project Objective
-To analyze student data and predict performance based on factors like:
+The objective of this project is to analyze student academic data and predict student performance using machine learning techniques based on the following factors:
 - Study hours
 - Attendance
 - Previous scores
