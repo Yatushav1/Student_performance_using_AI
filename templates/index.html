@@ -1,48 +1,172 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
-<title>Student Performance Predictor</title>
+<title>Student Performance Prediction</title>
 
-<link rel="stylesheet" href="/static/style.css">
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f5f6fa;
+}
+
+nav{
+background:#3f5f7f;
+color:white;
+padding:15px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+background:#2f4e6b;
+padding:8px 14px;
+border-radius:6px;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:60px 40px;
+gap:20px;
+}
+
+.hero h1{
+font-size:48px;
+color:#2c3e50;
+margin-bottom:10px;
+line-height:1.2;
+}
+
+.hero p{
+font-size:20px;
+color:#555;
+max-width:420px;
+line-height:1.5;
+margin-bottom:10px;
+}
+
+.hero-img{
+width:360px;
+object-fit:contain;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+background:#3f5f7f;
+color:white;
+padding:12px 22px;
+border-radius:6px;
+text-decoration:none;
+font-size:16px;
+}
+
+.cards{
+display:flex;
+gap:25px;
+padding:40px 80px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+width:30%;
+}
+
+.card h3{
+margin-top:0;
+color:#2c3e50;
+}
+
+.card p{
+color:#555;
+line-height:1.5;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="container-box">
+<nav>
 
-<h2>AI Performance Predictor</h2>
+<h2>Student Performance Prediction</h2>
 
-<form action="/predict" method="post">
+<div>
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+</div>
 
-<input name="study_hours" placeholder="Study Hours">
+</nav>
 
-<input name="attendance" placeholder="Attendance %">
 
-<input name="participation" placeholder="Class Participation">
+<div class="hero">
 
-<input name="score" placeholder="Total Score">
+<div>
 
-<button type="submit">Predict Grade</button>
+<h1>Welcome to Student Performance Prediction</h1>
 
-</form>
+<p>
+Predict student results using study habits and academic data.
+Track progress and improve outcomes with analytics.
+</p>
 
-{% if result %}
+<a class="btn" href="/register">Get Started</a>
 
-<h2>Predicted Grade: {{ result }}</h2>
+</div>
 
-{% endif %}
 
-<br>
+<img src="https://cdn-icons-png.flaticon.com/512/201/201634.png" class="hero-img">
 
-<center>
-<a href="/logout">Logout</a>
-</center>
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Analyze Study Habits</h3>
+
+<p>
+Use study data to predict academic performance.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Track Progress</h3>
+
+<p>
+Monitor student progress with visual insights.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Improve Outcomes</h3>
+
+<p>
+Get recommendations to improve performance.
+</p>
+
+</div>
 
 </div>
 
 </body>
-
 </html>

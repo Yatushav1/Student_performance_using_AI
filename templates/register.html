@@ -1,21 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
-    <link rel="stylesheet" href="/static/style.css">
+
+<title>Register</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f8;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:white;
+padding:40px;
+border-radius:10px;
+width:320px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+background:#355C7D;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+}
+
+.error{
+color:red;
+}
+
+</style>
+
 </head>
+
 <body>
-    <div class="container-box">
-        <h2>Create Account</h2>
-        <form method="POST">
-            <input name="username" placeholder="Username">
-            <input name="password" type="password" placeholder="Password">
-            <button type="submit">Register</button>
-        </form>
-        <br>
-        <center>
-            <a href="/login">Back to Login</a>
-        </center>
-    </div>
+
+<div class="box">
+
+<h2>Register</h2>
+
+<form action="/do_register" method="POST" onsubmit="return validatePassword()">
+
+<input type="text" name="username" placeholder="Username" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="password" id="password" name="password" placeholder="Password" required>
+
+<input type="password" id="confirm" placeholder="Confirm Password" required>
+
+<p id="error" class="error"></p>
+
+<button>Register</button>
+
+</form>
+
+</div>
+
+<script>
+
+function validatePassword(){
+
+let pass = document.getElementById("password").value
+let confirm = document.getElementById("confirm").value
+let error = document.getElementById("error")
+
+let strong = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&]).{6,}$/
+
+if(!strong.test(pass)){
+error.innerText="Password must contain uppercase, number and special character"
+return false
+}
+
+if(pass !== confirm){
+error.innerText="Passwords do not match"
+return false
+}
+
+return true
+}
+
+</script>
+
 </body>
 </html>

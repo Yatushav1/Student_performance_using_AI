@@ -1,60 +1,122 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
 body{
-font-family: 'Poppins', sans-serif;
-background: linear-gradient(135deg,#667eea,#764ba2);
-height:100vh;
+background:#f4f6f9;
+}
+
+.navbar{
+background:#2c5282;
+color:white;
+padding:15px 30px;
 display:flex;
-align-items:center;
-justify-content:center;
+justify-content:space-between;
 }
 
-.container-box{
-background:rgba(255,255,255,0.15);
-backdrop-filter: blur(15px);
-border-radius:20px;
-padding:40px;
-width:350px;
-box-shadow:0 10px 40px rgba(0,0,0,0.2);
-animation:fadeIn 1s ease;
-}
-
-input{
-width:100%;
-padding:10px;
-margin-top:10px;
-border:none;
-border-radius:8px;
-outline:none;
-}
-
-button{
-width:100%;
-padding:12px;
-margin-top:15px;
-background:#00f2fe;
-border:none;
-border-radius:8px;
-color:white;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-transform:scale(1.05);
-background:#4facfe;
-}
-
-h2{
-text-align:center;
-color:white;
-}
-
-a{
+.navbar a{
 color:white;
 text-decoration:none;
+background:#1a365d;
+padding:8px 15px;
+border-radius:5px;
 }
 
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(20px);}
-to{opacity:1; transform:translateY(0);}
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px;
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero-text h2{
+font-size:40px;
+color:#2c5282;
+margin-bottom:20px;
+}
+
+.hero-text p{
+margin-bottom:20px;
+color:#555;
+}
+
+.hero-img img{
+width:300px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:40px;
+}
+
+.feature{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.auth-container{
+max-width:400px;
+margin:80px auto;
+}
+
+.auth-card{
+background:white;
+padding:35px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.auth-card input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px;
+}
+
+.form input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.btn{
+padding:10px 20px;
+background:#2c5282;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#e8f0ff;
+text-align:center;
+border-radius:5px;
+}
+
+.charts{
+margin-top:40px;
 }

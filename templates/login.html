@@ -1,38 +1,82 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
 <title>Login</title>
 
-<link rel="stylesheet" href="/static/style.css">
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f8;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:white;
+padding:40px;
+border-radius:10px;
+width:320px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+background:#355C7D;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+}
+
+.error{
+color:red;
+}
+
+.captcha{
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="container-box">
+<div class="box">
 
-<h2>Student AI Login</h2>
+<h2>Login</h2>
 
-<form method="POST">
+<form action="/do_login" method="POST">
 
-<input name="username" placeholder="Username">
+<input type="email" name="email" placeholder="Email" required>
 
-<input name="password" type="password" placeholder="Password">
+<input type="password" name="password" placeholder="Password" required>
 
-<button type="submit">Login</button>
+<div class="captcha">
+Solve: {{ num1 }} + {{ num2 }} = ?
+</div>
+
+<input type="number" name="captcha" placeholder="Enter answer" required>
+
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
+<button>Login</button>
 
 </form>
-
-<br>
-
-<center>
-<a href="/register">Create Account</a>
-</center>
 
 </div>
 
 </body>
-
 </html>
